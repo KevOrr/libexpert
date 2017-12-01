@@ -40,11 +40,11 @@
   (numpy of library (lib-name "Numpy") (languages [python])
          (features fast-math)))
 
-; Hack for getting access to a slot by symbol
+;;; Hack for getting access to a slot by symbol
 (defmessage-handler language get (?place)
   (dynamic-get ?place))
 
-; messages for updating language score
+;;; messages for updating language score
 (defmessage-handler language better ()
   (bind ?self:score (+ ?self:score 1)))
 (defmessage-handler language worse ()
